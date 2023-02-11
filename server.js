@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 // helper methods
-const apiRoutes = require('./routes/api');
+const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
 // middleware for URL encoded data
