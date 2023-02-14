@@ -3,10 +3,16 @@
 
 
 
+## Description 
+This weeks challange was to build a app that with started code. we had to build the back end to deploy the app that created a notebook.
 
 
-
-
+## Built With
+ JS
+ HTML
+ CSS
+ EXPRESS.JS
+ NODE.JS
 
 
 ## screenshots 
