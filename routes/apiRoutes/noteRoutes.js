@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const {
   notes
-} = require('../../db/db');
+} = require('../../db/db.json');
 const {
   createNewNote,
   deleteNote
