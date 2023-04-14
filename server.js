@@ -1,26 +1,22 @@
-
-const PORT = process.env.PORT || 3001;
 const express = require('express');
-const app = express();
-const fs = require('fs');
 const path = require('path');
 
-// helper methods
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
+const app = express();
 
-// middleware for URL encoded data
-app.use(express.urlencoded({
-  extended: true
-}));
+const PORT = process.env.PORT || 3001;
 
 app.use(express.static('public'));
+app.use (express.json());
+app.use('/api', require('./routes/api'));
 
-// middleware for the parsing of JSON data
-app.use(express.json());
-app.use('/api', apiRoutes);
-app.use('/', htmlRoutes);
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/notes.html'))
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+});
 
 app.listen(PORT, () => {
-  console.log(`API server is now on port ${PORT}!`);
+    console.log(`Listening on ${PORT}`);
 });
